@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+  <style type="text/css">
+    #menu{
+    width:100%;
+    display:block;
+    z-index:999;
+    top:0px;
+    left:0px;
+    position:fixed;
+    background: white;
+    border-bottom: 1px solid;
+  }
+
+  #menutext{
+    float: left;
+    display: block;
+    margin-left: 5px;
+  }
+
+  #menu ul{
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  #menu li{
+    float: left;
+    list-style: none;
+    line-height: 30px;
+    background: white;
+    display: inline;
+  }
+
+  #menu li a, #menu li a:link{
+    color: black;
+    margin-left: 5px;
+    font-size: 10px;
+    display: block;
+    font-family: $(tabs.font);
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+
+  #menu li li a, #menu li li a:link, #menu li li a:visited{
+    font-size: 10px;
+    background: white;
+    color: black;
+    width: 150px;
+    margin: 0;
+    padding: 0px 10px;
+    line-height:30px;
+    position: relative;
+  }
+
+  #menu li li a:hover, #menu li li a:active {
+    color: #ccc;
+  }
+
+  #menu li ul{
+    z-index:9999;
+    position:absolute;
+    left:-999em;
+    height:auto;
+    width:170px;
+    margin:0px;
+    padding:0px;
+    border: 1px solid;
+  }
+
+  #menu li:hover ul, #menu li li:hover ul, #menu li li li:hover ul, #menu li.sfhover ul, #topwctopdropnav li li.sfhover ul, #topwctopdropnav li li li.sfhover ul{
+    left: auto;
+  }
+
+  #menu li:hover, #menu li.sfhover{
+    position: static;
+  }
+
+  .socialiconsmenu {
+    float: right;
+    font-size: 12px;
+    padding: 0px 0px;
+    margin: 10px 10px 0px 0px;
+    letter-spacing: 4px;
+    background: none;
+    display: inline-block;
+  }
+
+  .socialiconsmenu a:link {
+    color: black;
+  }
+
+  .socialiconsmenu a:hover {
+    color: #ccc;
+  }
+
+  /* RESPONSIVE */
+
+  @media screen and (max-width: 480px) {
+    #menu {
+      width: 100%;
+      height: 60px;
+      display: inline;
+      padding: 0;
+      margin: 0 0 22px 0;
+      z-index:100;
+      top:0px;
+      left:0px;
+      position:fixed;
+      background: white;
+      border-bottom: 1px solid;
+  }
+
+    #menutext{
+      float:left;
+      width: 100%;
+      display: inline;
+      padding: 0;
+      margin-left:5px;
+    }
+
+    #menu li a, #menu li a:link{
+      color: black;
+      margin-left: 5px;
+      font-size: 10px;
+      display: inline;
+      height: 15px;
+    }
+    .socialiconsmenu a:hover {
+    float: right;
+  }
+  }
+
+    @media screen and (max-width: 768px) {
+    #menu {
+      width: 100%;
+      height: 60px;
+      display: inline;
+  }
+
+    #menutext {
+      float:left;
+      width:100%;
+      display: inline;
+      padding:0;
+      margin-left:5px;
+    }
+
+    #menu li a, #menu li a:link {
+      color: black;
+      margin-left: 5px;
+      font-size: 10px;
+      display: inline;
+      height: 15px;
+    }
+
+  .socialiconsmenu {
+    float: none;
+    width: 100%;
+  }
+
+  }
+</style>
+<html>
+    <head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+<body>
+
+  <div id="menu">
+    <div id='menutext'>
+         <ul>
+           <li><a href='index.html'><strong>Home</strong></a></li>
+           <li><a href='#'><strong>Meraki</strong></a></li>
+           <li><a href='#'><strong>Fortinet</strong></a>
+               <ul>
+                  <li><a href='#'><strong>Viptela</strong></a></li>
+                  <li><a href='#'><strong>Velocloud</strong></a></li>
+                  <li><a href='#'>Fortinet</a></li>
+                  <li><a href='#'>Travel</a></li>
+               </ul>
+           </li>
+    <li><a href='#'><strong>Viptela</strong></a>
+             <ul>
+                  <li><a href='#'>Facebook</a></li>
+                  <li><a href='#'>Twitter</a></li>
+                  <li><a href='#'>Google Plus</a></li>
+                  <li><a href='#'>Pinterest</a></li>
+                  <li><a href='#'>YouTube</a></li>
+                  <li><a href='#'>Instagram</a></li>
+                  <li><a href='#'>Tumblr</a></li>
+                  <li><a href='#'>LookBook</a></li>
+                  <li><a href='#'>Bloglovin</a></li>
+               </ul>
+           </li>
+             <li><a href='#'><strong>Velocloud</strong></a></li>
+			 <li><a href='#'><strong>Contact</strong></a></li>
+             <li><a href='http://blogloveshop.com'><strong>Q&A</strong></a></li>
+         </ul>
+      </div>
+
+  </div>
+  <h2><u><strong>Viptela vs VeloCloud</strong></u></h2><br>
+  <br>
+  <h3><u><strong>What are the differences between Cisco Viptela vs VeloCloud?</strong></u></h3><br>
+  <br>
+  <p>If you were to ask your average IT professional about <strong>Cisco Viptela</strong> vs <strong>VeloCloud</strong>, they’d</p>
+  <p>probably share a few points but generally, there’s not a great deal of awareness. In this</p>
+  <p>article, we’ll compare the two market leading SD WAN solutions to help your business</p>
+  <p>make a more informed procurement decision.</p><br>
+  <br>
+  <p>Cisco are of course a recognised entity in the networking and security sector, due to huge market share,</p>
+  <p>which means there’s a level of trust and confidence associated with the brand. On the flip side,</p>
+  <p>VeloCloud was acquired by VMWare back in December 2017 joining an existing capability with</p>
+  <p>significant experience across virtualisation and cloud services technology. Cisco and VMWare are both</p>
+  <p>viewed as software defined market leaders with Cisco owning the hybrid networking space due to a</p>
+  <p>huge amount of experience across decades. Which software-based networking solution is best suited</p>
+  <p>to your business requirements, Viptela or VeloCloud?</p>
+
+    <img src="images/VV.JPG"alt="SSIDs"width="800px" hight="800px"><br>
+
+</body>
+</html>

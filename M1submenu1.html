@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CONFIGURING SIMPLE GUEST AND INTERNAL SSIDs</title>
+  </head>
+  <body>
+
+      <h2><u><strong>CISCO MERAKI</strong></u></h2><br>
+      <br>
+
+      <h3><u><strong>Name and Enable the Guest and Internal SSIDs</strong></u></h3><br>
+    <p>1.  In Dashboard, navigate to <strong>Wireless > Configure > SSIDs.</strong></p>
+    <p>2.  For the <strong>Name</strong> section of each SSID, click the <strong>rename </strong> link.</p>
+    <p>3.  Enable and rename the Guest and Internal SSIDs appropriately. This is the name of the wireless network that clients will see in their list of available network connections.</p>
+    <p>4.  Click the <strong>Save Changes</strong> button.</p>
+    <p>Configuration Overview:</p>
+    <img src="images/MerakiSSID.JPG"alt="SSIDs"width="1000px" hight="1000px"><br>
+    <br>
+      <h3><u><strong>Configure the 'Guest' SSID</strong></u></h3><br>
+      <p>1. Navigate to <strong>Wireless > Configure > Access control</strong>.</p>
+      <p>2. Select your guest network from the <strong>SSID</strong> drop-down menu.</p>
+      <p>3. For <strong>Association requirements</strong>, choose <strong>Open (no encryption)</strong>.</p>
+      <img src="images/accesscontrol.JPG"alt="SSIDs"width="500px" hight="500px">
+      <p>4. For <strong>Splash page</strong>, choose <strong>None (direct access)</strong>.</p>
+      <p>5. Scroll down to the <strong>Addressing and traffic</strong> section of the page.</p>
+      <p>6. Ensure that <strong>"NAT mode: Use Meraki DHCP"</strong> is selected. In NAT mode, Clients receive IP addresses in an isolated 10.0.0.0/8 network. Clients cannot communicate with each other.</p>
+      <p>7. Click <strong>Save Changes </strong> at the bottom of the page.</p>
+      <p>8. Navigate to the <strong>Configure > Firewall & traffic shaping</strong> page.</p>
+      <p>9. Ensure that the Guest network is selected on the SSID drop-down menu at the top of the page.</p>
+      <p>10.In the <strong>Layer 3</strong> firewall rules section, select Deny from the drop-down menu for the rule labeled <strong>Wireless clients accessing LAN</strong>. More information on this setting is available in Deny Local LAN' settings in Cisco Meraki MR firewall.</p>
+      <img src="images/firewall.JPG"alt="SSIDs"width="500px" hight="500px">
+      <p>11.Scroll down to the Traffic shaping rules section and select a <strong>Per-client</strong> and/or <strong>Per-SSID</strong>bandwidth limit.</p>
+      <p>12.Click <strong>Save Changes</strong>.</p>
+      <img src="images/traficshaping.JPG"alt="SSIDs"width="500px" hight="500px">
+
+      <h3><u><strong>Configure the 'Internal' SSID</strong></u></h3><br><br>
+      <p>1. Navigate to <strong>Configure > Access control</strong>.</p>
+      <p>2. Select your guest network from the <strong>SSID</strong> drop down.</p>
+      <p>3. For <strong>Association requirements</strong>, choose <strong>Pre-shared key with WPA2</strong> and enter a key that Clients will use to connect to the network.</p>
+      <img src="images/access.JPG"alt="SSIDs"width="600px" hight="600px">
+      <p>4. For <strong>Splash page</strong>, choose <strong>None (direct access)</strong></p>
+      <p>5. Scroll down to the <strong>Addressing and traffic</strong> section of the page.</p>
+      <p>6. Select <strong>"Bridge mode: Make clients part of the LAN"</strong>. In Bridge mode, Meraki devices operate transparently (no NAT or DHCP). Clients receive DHCP leases from the LAN or use static IPs</p>
+    <img src="images/addressing.JPG"alt="SSIDs"width="800px" hight="800px">
+      <p>7. Click <strong>Save Changes</strong> at the bottom of the page.</p>
+      <p>8. Navigate to the <strong>Firewall & traffic shaping </strong> page.</p>
+      <p>9. Ensure that the Internal network is selected on the SSID drop-down menu at the top of the page.</p>
+      <p>10.In the <strong>Layer 3 firewall rules</strong> section, make sure <strong>Allow</strong> is selected for the rule labeled <strong>Wireless clients accessing LAN</strong>.</p>
+      <p>11.Click <strong>Save Changes</strong></p>
+      <p>After these steps are complete, the AP's in your network will broadcast two different SSIDs. One network will allow Guest access to the Internet only, the other will allow Internal users to access the network through a secure extension of your wired LAN.</p>
