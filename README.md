@@ -1,1 +1,1 @@
-# ECT_ProjectA
+# ECSolutionProjetcA
